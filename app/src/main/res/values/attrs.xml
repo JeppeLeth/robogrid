@@ -9,4 +9,10 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="GridBoxLayout">
+        <attr name="separatorWidth" format="dimension" />
+        <attr name="separatorColor" format="color" />
+        <attr name="numColumns" format="integer" />
+        <attr name="numRows" format="integer" />
+    </declare-styleable>
 </resources>

@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullscreen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.IntroActivity">
+
+    <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_vertical_spacing"
+        android:gravity="center_horizontal"
+        android:text="Customize your grid"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="?android:textColorSecondaryInverse" />
+
+
+    <View
+        android:id="@+id/centerAncher"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/image"
+        android:hapticFeedbackEnabled="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headline"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/robot_sphere_face_skin_256"
+        android:tint="?colorPrimaryDark" />
+
+    <LinearLayout
+        android:id="@+id/picker1Area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_toStartOf="@id/centerAncher"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Rows"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="?android:textColorSecondary" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.NumberPickerNonEditable
+            android:id="@+id/rowsPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_horizontal_spacing"
+            android:layout_marginTop="@dimen/default_vertical_spacing" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/picker2Area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_toEndOf="@id/centerAncher"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Colums"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="?android:textColorSecondary" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.NumberPickerNonEditable
+            android:id="@+id/colsPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_horizontal_spacing"
+            android:layout_marginTop="@dimen/default_vertical_spacing" />
+    </LinearLayout>
+
+
+    <com.jleth.projects.robogrid.android.ui.widget.DefaultButton
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/next_button" />
+
+</RelativeLayout>

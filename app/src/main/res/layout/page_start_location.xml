@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.StartLocationActivity">
+
+    <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_vertical_spacing"
+        android:gravity="center_horizontal"
+        android:text="Choose start values"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="?android:textColorSecondaryInverse" />
+
+    <com.jleth.projects.robogrid.android.ui.widget.LocationDisplay
+        android:id="@+id/locationTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headline"
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/toast_frame"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/ic_location_36dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/text_color" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="300dp"
+        android:layout_height="310dp"
+        android:layout_below="@id/locationTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/default_vertical_spacing"
+        android:layout_marginTop="@dimen/default_vertical_spacing" />
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:animateLayoutChanges="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/recyclerView"
+        android:background="@color/dark_area"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/leftBtn"
+            style="@style/CircleButton"
+            android:background="@drawable/ic_arrow_left" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/downBtn"
+            style="@style/CircleButton"
+            android:background="@drawable/ic_arrow_down" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/upBtn"
+            style="@style/CircleButton"
+            android:background="@drawable/ic_arrow_up" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/rightBtn"
+            style="@style/CircleButton"
+            android:background="@drawable/ic_arrow_right" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/checkBtn"
+            android:visibility="gone"
+            tools:visibility="visible"
+            style="@style/CircleButton"
+            android:background="@drawable/ic_checkmark" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

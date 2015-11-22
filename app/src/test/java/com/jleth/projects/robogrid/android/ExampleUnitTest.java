@@ -1,4 +1,4 @@
-package com.jleth.projects.robotgrid;
+package com.jleth.projects.robogrid;
 
 import org.junit.Test;
 

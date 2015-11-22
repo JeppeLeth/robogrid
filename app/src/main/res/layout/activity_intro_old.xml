@@ -1,0 +1,97 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    tools:context=".ui.activity.IntroActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+    <com.jleth.projects.robogrid.android.ui.activity.StartLocationPage
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.jleth.projects.robogrid.android.ui.widget.JoystickView
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.jmedeisis.bugstick.Joystick
+            android:id="@+id/joystick"
+            android:layout_width="@dimen/base_size"
+            android:layout_height="@dimen/base_size"
+            android:background="@drawable/bg_base">
+
+            <!-- You may use any View here. -->
+
+            <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+                android:layout_width="@dimen/stick_size"
+                android:layout_height="@dimen/stick_size"
+                android:background="@drawable/bg_stick"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_arrow_mask" />
+
+        </com.jmedeisis.bugstick.Joystick>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/myFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_arrow_mask" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/myFAB1"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ic_rotate_left"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_arrow_mask" />
+
+
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/dummy_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

@@ -4,6 +4,10 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
     defaultConfig {
         applicationId "com.jleth.projects.robogrid.android"
         minSdkVersion 17
@@ -24,5 +28,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:support-v4:23.1.1'
-    compile project(':core')
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:percent:23.1.1'
+    compile 'com.jmedeisis:bugstick:0.2.2'
 }
