@@ -1,4 +1,4 @@
-package com.leth.projects.robogrid.console;
+package com.jleth.projects.robogrid.console;
 
 import com.jleth.projects.robogrid.core.Grid;
 import com.jleth.projects.robogrid.core.model.Position;

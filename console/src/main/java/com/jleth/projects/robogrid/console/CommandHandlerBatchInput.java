@@ -1,4 +1,4 @@
-package com.leth.projects.robogrid.console;
+package com.jleth.projects.robogrid.console;
 
 import com.jleth.projects.robogrid.core.Grid;
 import com.jleth.projects.robogrid.core.GridFactory;
@@ -22,7 +22,7 @@ public class CommandHandlerBatchInput extends CommandHandlerBase {
         Grid grid = null;
         while (grid == null) {
             try {
-                String input = com.leth.projects.robogrid.console.ConsoleInputUtil.inString(" Enter number of columns and rows (e.g. '8 9'): ");
+                String input = com.jleth.projects.robogrid.console.ConsoleInputUtil.inString(" Enter number of columns and rows (e.g. '8 9'): ");
                 String[] values = input.split(" ");
                 int cols = Integer.valueOf(values[0]);
                 int rows = Integer.valueOf(values[1]);
@@ -44,7 +44,7 @@ public class CommandHandlerBatchInput extends CommandHandlerBase {
             try {
                 System.out.println(" Enter X and Y coordinate and direction");
                 System.out.println(String.format(Locale.ENGLISH, " X coordinate (0-%d) - Y coordinate (0-%d) - Direction (N, S, E or W): ", grid.getColumnCount() - 1, grid.getRowCount() - 1));
-                String input = com.leth.projects.robogrid.console.ConsoleInputUtil.inString(" Please enter values (e.g. '1 2 W'): ");
+                String input = com.jleth.projects.robogrid.console.ConsoleInputUtil.inString(" Please enter values (e.g. '1 2 W'): ");
                 String[] values = input.split(" ");
                 int x = Integer.valueOf(values[0]);
                 int y = Integer.valueOf(values[1]);

@@ -1,6 +1,11 @@
 # Example of usage
-Run the file **com/leth/projects/robogrid/console/Main.java**
+Run the file **com/jleth/projects/robogrid/console/Main.java**
+or via commandline downloading the [JAR-file](console-all-1.0.jar)
+```
+...\Download>java -jar console-all-1.0.jar
+```
 
+### Console input/output
 
 ```
 ============================

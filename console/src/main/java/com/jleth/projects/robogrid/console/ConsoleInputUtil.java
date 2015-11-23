@@ -1,4 +1,4 @@
-package com.leth.projects.robogrid.console;
+package com.jleth.projects.robogrid.console;
 
 public class ConsoleInputUtil {
 

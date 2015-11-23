@@ -9,4 +9,4 @@ The project is split into 3 parts
   - Java console: Simple commandline interface for textual interaction with the grid.
   - Android app: UI interface for graphical interaction with the grid.
 
-> **Tip:** Check out the examples in [Console](/console/README.MD) section and [App](/app/README.MD) for a description of the different input formats.
+> **Tip:** Check out the examples in [Console](/console) section and [App](/app) for a description of the different input formats.

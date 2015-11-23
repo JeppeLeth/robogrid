@@ -1,8 +1,6 @@
-package com.leth.projects.robogrid.console;
+package com.jleth.projects.robogrid.console;
 
 import com.jleth.projects.robogrid.core.Grid;
-import com.leth.projects.robogrid.console.CommandHandlerBatchInput;
-import com.leth.projects.robogrid.console.CommandHandlerSingleLineInput;
 
 public class Main {
 
