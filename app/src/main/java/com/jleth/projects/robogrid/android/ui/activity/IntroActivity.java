@@ -1,9 +1,12 @@
 package com.jleth.projects.robogrid.android.ui.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.jleth.projects.robogrid.android.R;
 import com.jleth.projects.robogrid.android.data.sound.PlaybackController;
@@ -40,6 +43,22 @@ public class IntroActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             animateIntro();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.intro, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_github) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/JeppeLeth/robogrid"));
+            startActivity(browserIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initPrefs() {
