@@ -1,5 +1,5 @@
 # Example of usage
-Run the [APK file](app-debug-1_0.apk)
+Run the [APK file](app-debug-1_0.apk?raw=true)
 
 Works in both landscape and portrait!
 

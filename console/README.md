@@ -1,6 +1,6 @@
 # Example of usage
 Run the file **com/jleth/projects/robogrid/console/Main.java**
-or via commandline downloading the [JAR-file](console-all-1.0.jar)
+or via commandline downloading the [JAR-file](console-all-1.0.jar?raw=true)
 ```
 ...\Download>java -jar console-all-1.0.jar
 ```
