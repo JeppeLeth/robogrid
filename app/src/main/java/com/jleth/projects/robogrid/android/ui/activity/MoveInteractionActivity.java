@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.jleth.projects.robogrid.android.R;
+import com.jleth.projects.robogrid.android.data.grid.CoreGridController;
+import com.jleth.projects.robogrid.android.data.grid.GridController;
 import com.jleth.projects.robogrid.android.model.Location;
 import com.jleth.projects.robogrid.android.model.Size;
 
@@ -23,6 +25,7 @@ public class MoveInteractionActivity extends AppCompatActivity {
     private MoveInteractionPage mPage;
     private Size mGridSize;
     private Location mLocation;
+    private GridController mGridController;
 
 
     public static Intent newIntent(Context context, Size gridSize, Location startLocation) {
@@ -44,10 +47,16 @@ public class MoveInteractionActivity extends AppCompatActivity {
         hide();
 
         setupPageListener();
+        setGridController();
 
         if (savedInstanceState == null) {
             animateIntro();
         }
+    }
+
+    private void setGridController() {
+        mGridController = CoreGridController.createInstance(mGridSize);
+        mGridController.setStartLocation(mLocation);
     }
 
     @Override
@@ -92,17 +101,29 @@ public class MoveInteractionActivity extends AppCompatActivity {
         mPage.setListener(new MoveInteractionPage.Listener() {
             @Override
             public void onTurnLeft() {
-
+                mGridController.turnLeft();
+                updateView();
             }
 
             @Override
             public void onTurnRight() {
-
+                mGridController.turnRight();
+                updateView();
             }
 
             @Override
             public void onForward() {
+                mGridController.moveForward();
+                updateView();
+            }
+        });
+    }
 
+    private void updateView() {
+        mPage.post(new Runnable() {
+            @Override
+            public void run() {
+                mPage.updateLocation(mGridController.getCurrentLocation());
             }
         });
     }
