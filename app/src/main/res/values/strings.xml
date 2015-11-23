@@ -12,4 +12,11 @@
     <string name="direction_south">South</string>
     <string name="direction_west">West</string>
     <string name="direction_unknown">\???</string>
+    <string name="move_headline">Move and turn the robot</string>
+    <string name="start_location_headline">Choose start values</string>
+    <string name="intro_headline">Customize your grid</string>
+    <string name="btn_turn_right">Turn right</string>
+    <string name="btn_turn_left">Turn left</string>
+    <string name="btn_move_forward">Move forward</string>
+
 </resources>

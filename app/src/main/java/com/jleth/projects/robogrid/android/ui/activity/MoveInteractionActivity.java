@@ -12,20 +12,23 @@ import com.jleth.projects.robogrid.android.model.Location;
 import com.jleth.projects.robogrid.android.model.Size;
 
 /**
- * Set start location and direction before beginning
+ * Begin to let the user move the object around in the grid via 3 controls
  */
-public class StartLocationActivity extends AppCompatActivity {
+public class MoveInteractionActivity extends AppCompatActivity {
 
-    private static final String TAG = "StartLocationActivity";
+    private static final String TAG = "MoveInteractionActivity";
     private static final String ARGS_GRID_SIZE = "ARGS_GRID_SIZE";
+    private static final String ARGS_LOCATION = "ARGS_LOCATION";
 
-    private StartLocationPage mPage;
+    private MoveInteractionPage mPage;
     private Size mGridSize;
+    private Location mLocation;
 
 
-    public static Intent newIntent(Context context, Size gridSize) {
-        Intent i = new Intent(context, StartLocationActivity.class);
+    public static Intent newIntent(Context context, Size gridSize, Location startLocation) {
+        Intent i = new Intent(context, MoveInteractionActivity.class);
         i.putExtra(ARGS_GRID_SIZE, gridSize);
+        i.putExtra(ARGS_LOCATION, startLocation);
         return i;
     }
 
@@ -33,9 +36,9 @@ public class StartLocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_start_location);
+        setContentView(R.layout.activity_move_interaction);
 
-        extractIntent();
+        extractBundle(savedInstanceState != null ? savedInstanceState : getIntent().getExtras());
 
         initContent();
         hide();
@@ -47,14 +50,22 @@ public class StartLocationActivity extends AppCompatActivity {
         }
     }
 
-    private void extractIntent() {
-        mGridSize = getIntent().getParcelableExtra(ARGS_GRID_SIZE);
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
         hide();
+    }
+
+    private void extractBundle(Bundle extras) {
+        mGridSize = extras.getParcelable(ARGS_GRID_SIZE);
+        mLocation = extras.getParcelable(ARGS_LOCATION);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(ARGS_GRID_SIZE, mGridSize);
+        outState.putParcelable(ARGS_LOCATION, mLocation);
     }
 
     private void hide() {
@@ -72,23 +83,26 @@ public class StartLocationActivity extends AppCompatActivity {
     }
 
     private void initContent() {
-        mPage = (StartLocationPage) findViewById(R.id.mainContent);
+        mPage = (MoveInteractionPage) findViewById(R.id.mainContent);
         mPage.setGridSize(mGridSize);
+        mPage.updateLocation(mLocation);
     }
 
     private void setupPageListener() {
-        mPage.setListener(new StartLocationPage.Listener() {
+        mPage.setListener(new MoveInteractionPage.Listener() {
+            @Override
+            public void onTurnLeft() {
+
+            }
 
             @Override
-            public void onLocationChosen(final Location location) {
-                mPage.animateDisappearContent(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(MoveInteractionActivity.newIntent(mPage.getContext(), mGridSize, location));
-                        finish();
-                        overridePendingTransition(0, 0);
-                    }
-                });
+            public void onTurnRight() {
+
+            }
+
+            @Override
+            public void onForward() {
+
             }
         });
     }

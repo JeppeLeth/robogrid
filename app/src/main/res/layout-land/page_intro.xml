@@ -12,27 +12,27 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_vertical_spacing"
         android:gravity="center_horizontal"
-        android:text="Customize your grid"
+        android:text="@string/intro_headline"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
         android:textColor="?android:textColorSecondaryInverse" />
 
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/image"
-        android:hapticFeedbackEnabled="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/picker2Area"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/picker2Area"
+        android:hapticFeedbackEnabled="true"
         android:src="@drawable/robot_sphere_face_skin_256"
         android:tint="?colorPrimaryDark" />
 
     <LinearLayout
         android:id="@+id/picker1Area"
         android:layout_width="200dp"
-        android:layout_above="@+id/startBtn"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/startBtn"
         android:layout_below="@+id/headline"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -57,8 +57,8 @@
         android:id="@+id/picker2Area"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/headline"
         android:layout_above="@+id/startBtn"
+        android:layout_below="@+id/headline"
         android:layout_toEndOf="@id/picker1Area"
         android:gravity="center_horizontal"
         android:orientation="vertical">

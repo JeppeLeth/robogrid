@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.StartLocationActivity">
+    tools:context=".ui.activity.MoveInteractionActivity">
 
     <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
         android:id="@+id/headline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:gravity="center_horizontal"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:text="@string/start_location_headline"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:gravity="center_horizontal"
+        android:text="@string/move_headline"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
         android:textColor="?android:textColorSecondaryInverse" />
 
@@ -53,12 +53,7 @@
         <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
             android:id="@+id/leftBtn"
             style="@style/CircleButton"
-            android:background="@drawable/ic_arrow_left" />
-
-        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
-            android:id="@+id/downBtn"
-            style="@style/CircleButton"
-            android:background="@drawable/ic_arrow_down" />
+            android:background="@drawable/ic_rotate_left" />
 
         <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
             android:id="@+id/upBtn"
@@ -68,14 +63,8 @@
         <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
             android:id="@+id/rightBtn"
             style="@style/CircleButton"
-            android:background="@drawable/ic_arrow_right" />
+            android:background="@drawable/ic_rotate_right" />
 
-        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
-            android:id="@+id/checkBtn"
-            style="@style/CircleButton"
-            android:background="@drawable/ic_checkmark"
-            android:visibility="gone"
-            tools:visibility="visible" />
 
     </LinearLayout>
 

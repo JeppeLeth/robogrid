@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_vertical_spacing"
+        android:layout_marginEnd="@dimen/default_horizontal_spacing"
+        android:layout_marginStart="@dimen/default_horizontal_spacing"
         android:gravity="center_horizontal"
-        android:text="Customize your grid"
+        android:text="@string/intro_headline"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
         android:textColor="?android:textColorSecondaryInverse" />
 
@@ -25,11 +27,11 @@
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/image"
-        android:hapticFeedbackEnabled="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/headline"
         android:layout_centerHorizontal="true"
+        android:hapticFeedbackEnabled="true"
         android:src="@drawable/robot_sphere_face_skin_256"
         android:tint="?colorPrimaryDark" />
 

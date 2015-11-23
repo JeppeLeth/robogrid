@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.IntroActivity">
 
-    <com.jleth.projects.robogrid.android.ui.activity.StartLocationPage
+    <com.jleth.projects.robogrid.android.ui.activity.MoveInteractionPage
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

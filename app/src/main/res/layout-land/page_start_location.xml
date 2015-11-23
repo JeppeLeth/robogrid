@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context=".ui.activity.StartLocationActivity">
+
+    <com.jleth.projects.robogrid.android.ui.widget.DefaultTextView
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_vertical_spacing"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toEndOf="@+id/recyclerContainer"
+        android:gravity="center_horizontal"
+        android:text="@string/start_location_headline"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="?android:textColorSecondaryInverse" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/headline"
+        android:layout_alignStart="@+id/headline"
+        android:layout_below="@id/headline"
+        android:layout_marginTop="@dimen/default_horizontal_spacing"
+        android:gravity="center_vertical">
+
+        <com.jleth.projects.robogrid.android.ui.widget.LocationDisplay
+            android:id="@+id/locationTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:drawable/toast_frame"
+            android:drawablePadding="16dp"
+            android:drawableStart="@drawable/ic_location_36dp"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/text_color" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/recyclerContainer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        tools:showIn="@layout/page_start_location">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="@dimen/recycler_grid_width"
+            android:layout_height="@dimen/recycler_grid_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_horizontal_spacing"
+            android:layout_marginTop="@dimen/default_horizontal_spacing" />
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_control_panel_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/recyclerContainer"
+        android:animateLayoutChanges="true"
+        android:background="@color/dark_area"
+        android:paddingBottom="@dimen/default_vertical_spacing"
+        android:paddingEnd="32dp"
+        android:paddingStart="@dimen/default_horizontal_spacing"
+        android:paddingTop="@dimen/default_vertical_spacing">
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/upBtn"
+            style="@style/CircleButton"
+            android:layout_margin="0dp"
+            android:layout_toEndOf="@+id/leftBtn"
+            android:background="@drawable/ic_arrow_up"
+            android:contentDescription="@string/direction_north" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/downBtn"
+            style="@style/CircleButton"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="0dp"
+            android:layout_toEndOf="@+id/leftBtn"
+            android:background="@drawable/ic_arrow_down"
+            android:contentDescription="@string/direction_south" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/rightBtn"
+            style="@style/CircleButton"
+            android:layout_centerVertical="true"
+            android:layout_margin="0dp"
+            android:layout_toEndOf="@+id/upBtn"
+            android:background="@drawable/ic_arrow_right"
+            android:contentDescription="@string/direction_east" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/leftBtn"
+            style="@style/CircleButton"
+            android:layout_centerVertical="true"
+            android:layout_margin="0dp"
+            android:background="@drawable/ic_arrow_left"
+            android:contentDescription="@string/direction_west" />
+
+        <com.jleth.projects.robogrid.android.ui.widget.CircleImageButton
+            android:id="@+id/checkBtn"
+            style="@style/CircleButton"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/rightBtn"
+            android:background="@drawable/ic_checkmark"
+            android:contentDescription="@string/start_button"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

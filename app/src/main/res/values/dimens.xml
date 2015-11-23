@@ -7,6 +7,10 @@
     <dimen name="default_horizontal_spacing">8dp</dimen>
     <dimen name="default_vertical_spacing">8dp</dimen>
 
+    <dimen name="button_control_panel_height">100dp</dimen>
+    <dimen name="recycler_grid_width">300dp</dimen>
+    <dimen name="recycler_grid_height">310dp</dimen>
+
     <dimen name="base_size">200dp</dimen>
     <dimen name="stick_size">58dp</dimen>
 </resources>
